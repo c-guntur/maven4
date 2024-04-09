@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.1.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.1.0 https://maven.apache.org/xsd/maven-4.1.0.xsd">
+
+    <modelVersion>4.1.0</modelVersion>
+
+    <groupId>none.cvg.maven</groupId>
+    <artifactId>maven-multi</artifactId>
+    <version>${revision}</version>
+    <packaging>pom</packaging>
+
+    <name>maven-multi</name>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <!-- Specify the Java version for the compiler plugin here -->
+        <!-- Available from Java 9, setting release includes source and target (and then some) -->
+        <maven.compiler.release>21</maven.compiler.release>
+
+        <!-- Specify the java version that may be used in places other than the compiler plugin -->
+        <java.version>21</java.version>
+        <jdk.version>21</jdk.version>
+        <revision>1.0.0</revision>
+
+        <junit-jupiter.version>5.10.1</junit-jupiter.version>
+
+    </properties>
+
+    <modules>
+        <module>datetime-fetcher</module>
+        <module>greeting</module>
+        <module>greeting-generator</module>
+    </modules>
+
+    <dependencyManagement>
+        <dependencies>
+
+            <dependency>
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter-api</artifactId>
+                <version>${junit-jupiter.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter</artifactId>
+                <version>${junit-jupiter.version}</version>
+                <scope>test</scope>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+
+        <pluginManagement>
+            <plugins>
+                <!-- Enforce the plugin version, rather than rely on defaults -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.13.0</version>
+                </plugin>
+                <!-- Enforce the plugin version, rather than rely on defaults -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>3.2.5</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
+</project>
