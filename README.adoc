@@ -1,5 +1,8 @@
 = Maven Multi Module
 
+== Slides for this project:
+link:https://speakerdeck.com/cguntur/apache-maven-4-dot-dot-dot-is-awesome[Apache Maven 4 ... is Awesome!]
+
 == About the project
 
 This is a greeter project. The running of the main class in this project prints a "Good [morning, afternoon or evening], today is: <yyyy-MM-dd>".
