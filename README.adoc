@@ -5,7 +5,26 @@ link:https://speakerdeck.com/cguntur/apache-maven-4-dot-dot-dot-is-awesome[Apach
 
 == About the project
 
-This is a greeter project. The running of the main class in this project prints a "Good [morning, afternoon or evening], today is: <yyyy-MM-dd>".
+This is a greeter project. The running of the main class in this project prints a +
+*"Good [morning, afternoon or evening], today is: <yyyy-MM-dd>"*.
+
+=== Module dependency
+
+:figure-caption!:
+:toc:
+
+ifdef::env-github[]
+++++
+<p align="center">
+  <img width="300" src="Modules.png">
+</p>
+++++
+endif::[]
+
+ifndef::env-github[]
+image::Modules.png[Project Modules, 300, align=center]
+endif::[]
+
 
 The root POM is an aggregator that declares three modules:
 
